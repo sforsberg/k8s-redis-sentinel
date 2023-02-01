@@ -40,10 +40,14 @@ kubectl apply -f redis-service.yaml
 kubectl apply -f sentinel-service.yaml
 ```
 
-You should now see the pods running:
+You should now see the pods running by running the following:
 
 ```sh
 kubectl -n redis get all
+```
+
+#### Output
+```
 NAME             READY   STATUS    RESTARTS   AGE
 pod/redis-0      1/1     Running   0          7m38s
 pod/redis-1      1/1     Running   0          7m16s
