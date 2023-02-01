@@ -37,7 +37,7 @@ spec:
             done
             echo "Creating Sentinel configuration file"
             cat > /etc/redis/sentinel.conf <<EOL
-            port 5000
+            port 26379
             sentinel monitor mymaster $MASTER 6379 2
             sentinel resolve-hostnames yes
             sentinel announce-hostnames yes
@@ -56,7 +56,7 @@ spec:
         command: ["redis-sentinel"]
         args: ["/etc/redis/sentinel.conf"]
         ports:
-        - containerPort: 5000
+        - containerPort: 26379
           name: sentinel
         volumeMounts:
         - name: redis-config
